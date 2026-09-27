@@ -1,0 +1,35 @@
+services:
+  backend:
+    build: ./BackendBia
+    image: bia-energy-api:latest
+    container_name: bia-backend
+    ports:
+      - "${API_PORT:-8080}:8080"
+    environment:
+      JWT_SECRET: ${JWT_SECRET:-bia-demo-secret-change-me}
+      DEMO_EMAIL: ${DEMO_EMAIL:-demo@bia.energy}
+      DEMO_PASSWORD: ${DEMO_PASSWORD:-demo123}
+      DEMO_NAME: ${DEMO_NAME:-Laura Gómez}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000}
+    volumes:
+      - bia-state:/app/state
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./FrontendBia
+      args:
+        VITE_API_URL: /api
+    image: bia-energy-web:latest
+    container_name: bia-frontend
+    ports:
+      - "${WEB_PORT:-3000}:80"
+    environment:
+      API_UPSTREAM: http://backend:8080
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  bia-state:

@@ -1,0 +1,13 @@
+meter_id,name,location
+M-101,Oficinas administrativas,Sede Central · Bogotá
+M-102,Centro de distribución,Funza · Cundinamarca
+M-103,Laboratorio de calidad,Sede Central · Bogotá
+M-104,Planta de producción A,Parque Industrial · Medellín
+M-105,Cuarto frío,Funza · Cundinamarca
+M-106,Planta de producción B,Parque Industrial · Medellín
+M-107,Punto de venta Norte,Usaquén · Bogotá
+M-108,Centro de datos,Zona Franca · Bogotá
+M-109,Planta de compresores,Zona Industrial · Cali
+M-110,Punto de venta Sur,Kennedy · Bogotá
+M-111,Taller de mantenimiento,Parque Industrial · Medellín
+M-112,Bodega de materias primas,Zona Industrial · Cali

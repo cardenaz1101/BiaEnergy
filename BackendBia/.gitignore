@@ -1,0 +1,4 @@
+bin/
+data/state.json
+data/state.json.tmp
+data/expected_results.csv

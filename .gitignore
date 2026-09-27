@@ -1,0 +1,17 @@
+**/node_modules
+**/dist
+**/bin
+**/data/state.json
+**/data/state.json.tmp
+.env
+.env.local
+.DS_Store
+
+*.pdf
+*.mp4
+*.mov
+*.webm
+**/expected_results.csv
+
+BackendBia/readings.csv
+BackendBia/events.csv

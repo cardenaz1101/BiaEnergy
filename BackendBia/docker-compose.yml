@@ -1,0 +1,19 @@
+services:
+  backend:
+    build: .
+    image: bia-energy-api:latest
+    container_name: bia-backend
+    ports:
+      - "${PORT:-8080}:8080"
+    environment:
+      JWT_SECRET: ${JWT_SECRET:-bia-demo-secret-change-me}
+      DEMO_EMAIL: ${DEMO_EMAIL:-demo@bia.energy}
+      DEMO_PASSWORD: ${DEMO_PASSWORD:-demo123}
+      DEMO_NAME: ${DEMO_NAME:-Laura Gómez}
+      CORS_ORIGINS: ${CORS_ORIGINS:-*}
+    volumes:
+      - bia-state:/app/state
+    restart: unless-stopped
+
+volumes:
+  bia-state:
